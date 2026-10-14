@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: data-lineage-reconstruction-agent
+version: "1.0.0"
+description: Reconstructs candidate data lineage from supplied SQL and pipeline metadata with evidence and uncertainty.
+author: jagapathi-meesala
+license: MIT
+skills:
+  - lineage-reconstruction
+  - impact-analysis
+  - lineage-validation
+tools:
+  - extract-lineage
+  - analyze-impact
+  - validate-lineage
+runtime:
+  max_turns: 5
+  temperature: 0.2
+  timeout: 30
+tags:
+  - data-engineering
+  - lineage
+  - governance

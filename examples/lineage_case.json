@@ -1,0 +1,9 @@
+{
+  "sql_statements": [
+    "CREATE TABLE analytics.daily_sales AS SELECT * FROM raw.orders JOIN raw.customers ON orders.customer_id = customers.id"
+  ],
+  "pipeline_dependencies": [
+    {"source": "raw.orders", "target": "analytics.daily_sales", "evidence": "Nightly ETL configuration"}
+  ],
+  "known_assets": ["raw.orders", "raw.customers", "analytics.daily_sales"]
+}

@@ -1,0 +1,15 @@
+name: analyze-impact
+description: Traverse supplied edges to identify upstream and downstream dependencies.
+input_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    asset: {type: string}
+    edges:
+      type: array
+      items:
+        type: object
+        properties:
+          source: {type: string}
+          target: {type: string}
+  required: [asset, edges]

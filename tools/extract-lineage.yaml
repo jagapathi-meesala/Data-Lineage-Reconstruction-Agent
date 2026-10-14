@@ -1,0 +1,23 @@
+name: extract-lineage
+description: Extract candidate lineage edges from supplied SQL and pipeline metadata.
+input_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    sql_statements:
+      type: array
+      items: {type: string}
+    pipeline_dependencies:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        required: [source, target]
+        properties:
+          source: {type: string}
+          target: {type: string}
+          evidence: {type: string}
+    known_assets:
+      type: array
+      items: {type: string}
+  required: [sql_statements, pipeline_dependencies]

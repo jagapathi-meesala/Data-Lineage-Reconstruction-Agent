@@ -1,0 +1,17 @@
+name: validate-lineage
+description: Check lineage edge quality, unknown assets, duplicates, and cycles.
+input_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    edges:
+      type: array
+      items:
+        type: object
+        properties:
+          source: {type: string}
+          target: {type: string}
+    known_assets:
+      type: array
+      items: {type: string}
+  required: [edges]
